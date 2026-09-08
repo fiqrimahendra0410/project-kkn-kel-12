@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  web:
+    image: php:8.2-apache
+    container_name: kkn-web
+    ports:
+      - "8000:80"
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - kkn-network
+    command: >
+      sh -c "docker-php-ext-install mysqli pdo pdo_mysql && apache2-foreground"
+
+networks:
+  kkn-network:
+    external: true

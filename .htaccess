@@ -1,0 +1,19 @@
+# ========================================================
+# Konfigurasi Apache .htaccess - KKN Kelompok 12 (InfinityFree Compatible)
+# ========================================================
+
+# 1. Tentukan halaman utama default
+DirectoryIndex index.php
+
+# 2. Matikan Directory Listing (keamanan agar folder tidak bisa diintip isinya)
+<IfModule mod_autoindex.c>
+    Options -Indexes
+</IfModule>
+
+# 3. Sembunyikan ekstensi .php dari URL (opsional & rapi)
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.php -f
+    RewriteRule ^([^\.]+)/?$ $1.php [NC,L]
+</IfModule>

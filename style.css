@@ -1,0 +1,542 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap");
+
+/*====================
+NAVBAR
+====================*/
+.logo{
+    width:52px;
+    height:52px;
+}
+
+.navbar-brand h4{
+    font-size:22px;
+    font-weight:700;
+}
+
+.navbar-brand small{
+    font-size:13px;
+    color:#6c757d;
+}
+
+.nav-link{
+    font-weight:600;
+    color:#444;
+}
+
+.nav-link:hover{
+    color:#0e30c8;
+}
+
+/*====================
+VISI & MISI (#tentang) — sesuai markup aktif (.card polos + bi-eye/bi-bullseye)
+====================*/
+
+#tentang{
+    background:#f8fafc;
+}
+
+#tentang .card:hover{
+    transform:translateY(-6px);
+    transition:.3s;
+    box-shadow:0 20px 40px rgba(0,0,0,.12)!important;
+}
+
+/*====================
+PROFIL DESA
+====================*/
+
+#profil-desa{
+    background:#fff;
+}
+
+#profil-desa img{
+    border-radius:25px;
+}
+
+/*====================
+PROGRAM KERJA (carousel Bootstrap yang aktif)
+====================*/
+
+#program{
+    background:#fff;
+}
+
+/* transisi hover kartu carousel — biarkan ringan, jangan tambah padding/border
+   di sini karena akan bentrok dengan card-img-top Bootstrap */
+.program-card{
+    transition:.3s ease;
+}
+
+.program-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 40px rgba(0,0,0,.10)!important;
+}
+
+.badge{
+    font-size:14px;
+    letter-spacing:1px;
+}
+
+
+/* =====================================================================
+   BAGIAN DI BAWAH INI BELUM DIPAKAI DI HTML YANG AKTIF SEKARANG.
+   Disimpan sebagai referensi desain alternatif (bukan konflik lagi
+   karena nama class-nya sudah diberi akhiran -classic supaya tidak
+   bentrok dengan elemen yang benar-benar tampil di halaman).
+   Aman dihapus kapan saja kalau tidak akan dipakai.
+   ===================================================================== */
+
+/* ---- Alternatif Visi/Misi bergaya icon-box (belum dipakai) ---- */
+.visi-card-classic,
+.misi-card-classic{
+    border-radius:25px;
+    transition:.4s;
+}
+
+.visi-card-classic:hover,
+.misi-card-classic:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.12)!important;
+}
+
+.icon-box-classic{
+    width:75px;
+    height:75px;
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:32px;
+}
+
+.misi-list-classic li{
+    margin-bottom:18px;
+    color:#555;
+    font-size:16px;
+    line-height:1.8;
+}
+
+/* ---- Alternatif Profil Desa dengan info-card hover hijau (belum dipakai) ---- */
+.info-card-classic{
+    background:#f8f9fa;
+    border-radius:18px;
+    padding:20px;
+    text-align:center;
+    transition:.3s;
+    height:100%;
+}
+
+.info-card-classic:hover{
+    background:#198754;
+    color:#fff;
+    transform:translateY(-8px);
+}
+
+.info-card-classic i{
+    font-size:28px;
+    margin-bottom:12px;
+    color:#198754;
+}
+
+.info-card-classic:hover i{
+    color:#fff;
+}
+
+.info-card-classic h6{
+    font-weight:700;
+    margin-top:10px;
+}
+
+.info-card-classic p{
+    margin:0;
+    font-size:14px;
+}
+
+/* ==========================
+   MAPBOX
+========================== */
+
+#map{
+    width:100%;
+    height:550px;
+    border-radius:20px;
+    overflow:hidden;
+    background:#e9ecef;
+    border:1px solid #dee2e6;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    margin:40px 0;
+}
+
+/* Loading */
+#map::before{
+    content:"Memuat peta...";
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:100%;
+    color:#666;
+    font-size:18px;
+    font-weight:600;
+}
+
+/* Setelah Mapbox dimuat */
+#map .mapboxgl-canvas{
+    border-radius:20px;
+}
+
+#map .mapboxgl-control-container{
+    font-family:Inter,sans-serif;
+}
+
+.mapboxgl-popup-content{
+    border-radius:15px;
+    padding:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.mapboxgl-popup-content h5{
+    margin-bottom:8px;
+    font-weight:700;
+}
+
+.mapboxgl-popup-content p{
+    margin-bottom:8px;
+    color:#555;
+}
+
+.mapboxgl-popup-content a{
+    color:#0d6efd;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.mapboxgl-popup-content a:hover{
+    text-decoration:underline;
+}
+
+.mapboxgl-ctrl-group{
+    border-radius:12px !important;
+    overflow:hidden;
+}
+
+.mapboxgl-marker{
+    cursor:pointer;
+}
+
+/* Responsive */
+
+@media (max-width:992px){
+    #map{
+        height:450px;
+    }
+}
+
+@media (max-width:768px){
+    #map{
+        height:350px;
+        border-radius:15px;
+    }
+}
+
+/* ---- Alternatif Program Kerja bergaya icon-box (belum dipakai, dulu bentrok dengan .program-card) ---- */
+.program-card-classic{
+    background:#fff;
+    padding:35px;
+    border-radius:25px;
+    position:relative;
+    overflow:hidden;
+    transition:.35s;
+    border:1px solid #e9ecef;
+    height:100%;
+}
+
+.program-card-classic::before{
+    content:'';
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:5px;
+    background:#198754;
+}
+
+.program-card-classic:hover{
+    transform:translateY(-10px);
+    box-shadow:0 18px 40px rgba(0,0,0,.10);
+}
+
+.program-icon-classic{
+    width:70px;
+    height:70px;
+    background:#198754;
+    color:#fff;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    margin-bottom:25px;
+}
+
+.program-card-classic h4{
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.program-card-classic p{
+    color:#6c757d;
+    line-height:1.8;
+}
+
+.program-btn-classic{
+    text-decoration:none;
+    color:#198754;
+    font-weight:600;
+}
+
+.program-btn-classic i{
+    transition:.3s;
+}
+
+.program-btn-classic:hover i{
+    margin-left:8px;
+}
+
+/* ---- Layout galeri "retro" bergambar penuh dengan gradient (belum dipakai) ---- */
+.retro-layout .v-height {
+    height: 240px;
+}
+.retro-layout .h-entry {
+    display: block;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.retro-layout .h-entry.gradient {
+    position: relative;
+}
+.retro-layout .h-entry.mb-30 {
+    margin-bottom: 30px;
+}
+.retro-layout .h-entry.gradient:before {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
+}
+.retro-layout .h-entry .featured-img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transform: scale(1.05);
+    transition: .3s all ease;
+}
+.retro-layout .text {
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    padding: 20px;
+    max-width: 350px;
+}
+.retro-layout .text span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    display: block;
+    margin-bottom: 5px;
+}
+.retro-layout .h-entry .date {
+    font-size: 15px;
+}
+.retro-layout .text h2, .retro-layout .text .h2 {
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+@media (max-width: 767.98px){
+    .retro-layout .img-5 {
+        height: 240px !important;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+}
+
+/* ---- Layout "postcard" zig-zag untuk Program Kerja (belum dipakai, digantikan carousel) ---- */
+.postcard {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 12px 35px rgba(0,0,0,.08);
+    margin-bottom: 2rem;
+    transition: .4s ease;
+}
+
+.postcard:hover{
+    transform: translateY(-8px);
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
+}
+
+.postcard__img_link{
+    flex:0 0 40%;
+}
+
+.postcard__img{
+    width:100%;
+    height:100%;
+    min-height:300px;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.postcard:hover .postcard__img{
+    transform:scale(1.08);
+}
+
+.postcard__text{
+    flex:1;
+    padding:2rem;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.postcard__title{
+    font-size:2rem;
+    margin-bottom:.5rem;
+    font-weight:700;
+}
+
+.postcard__title a{
+    color:#222;
+    text-decoration:none;
+}
+
+.postcard__title a:hover{
+    color:#0d6efd;
+}
+
+.postcard__subtitle{
+    color:#777;
+    font-size:.9rem;
+    margin-bottom:1rem;
+}
+
+.postcard__bar{
+    width:60px;
+    height:5px;
+    border-radius:10px;
+    margin-bottom:1rem;
+    transition:.4s;
+}
+
+.postcard:hover .postcard__bar{
+    width:120px;
+}
+
+.postcard__preview-txt{
+    color:#555;
+    line-height:1.8;
+    margin-bottom:1.5rem;
+}
+
+.postcard__tagbox{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.tag__item{
+    background:#ececec;
+    padding:8px 15px;
+    border-radius:30px;
+    font-size:.9rem;
+    transition:.3s;
+}
+
+.tag__item:hover{
+    background:#ddd;
+}
+
+.tag__item a{
+    color:#fff;
+    text-decoration:none;
+}
+
+.play{
+    color:#fff;
+}
+
+.blue .postcard__bar{ background:#0d6efd; }
+.blue .play{ background:#0d6efd; }
+.blue .postcard__title{ color:#0d6efd; }
+
+.red .postcard__bar{ background:#dc3545; }
+.red .play{ background:#dc3545; }
+.red .postcard__title{ color:#dc3545; }
+
+.green .postcard__bar{ background:#198754; }
+.green .play{ background:#198754; }
+.green .postcard__title{ color:#198754; }
+
+.yellow .postcard__bar{ background:#ffc107; }
+.yellow .play{ background:#ffc107; }
+.yellow .play a{ color:#222; }
+.yellow .postcard__title{ color:#d39e00; }
+
+.postcard:nth-child(even){
+    flex-direction:row-reverse;
+}
+
+@media(max-width:992px){
+    .postcard{ flex-direction:column !important; }
+    .postcard__img_link{ width:100%; }
+    .postcard__img{ min-height:220px; }
+    .postcard__text{ padding:1.5rem; }
+    .postcard__title{ font-size:1.6rem; }
+}
+
+@media(max-width:576px){
+    .postcard__title{ font-size:1.4rem; }
+    .postcard__preview-txt{ font-size:.95rem; }
+    .tag__item{ font-size:.8rem; padding:6px 12px; }
+}
+
+/* Responsive Global Enhancements for Mobile, Tablet & Foldable Screens */
+@media (max-width: 768px) {
+    body {
+        padding-top: 65px;
+    }
+    .modal-dialog {
+        margin: 0.5rem;
+    }
+    .table-responsive {
+        -webkit-overflow-scrolling: touch;
+    }
+    .hero-bg {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+    }
+    .display-3, .display-4, .display-5 {
+        font-size: clamp(1.75rem, 6vw, 2.5rem) !important;
+    }
+}
